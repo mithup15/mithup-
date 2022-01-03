@@ -2,8 +2,21 @@
 <html>
 <head>
     <title> form</title>
+    <style>
+        form{
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            width: 30%;
+        }
+        
+        .container{
+            background-color: chartreuse;
+        } 
+    </style>
 </head>
 <body>
+    <div class="container">
     <form>
     <label for="first name">FIRST NAME : </label><br>
     <input id="firstname" type="text" placeholder="first name"><br>
@@ -13,22 +26,24 @@
     <input id="mail" type="text" placeholder="email"><br>
     <br>
     <label for="gender">GENDER :</label><br>
-    <input type="checkbox" name="MALE"> MALE<br>
-    <input type="checkbox" name="FEMALE">FEMALE<br>
+    <input type="radio" name="gender"> MALE<br>
+    <input type="radio" name="gender">FEMALE<br>
     <br>
     <label for="phone number">PHONE NO : </label>
     <input id="phone number" type="tel" placeholder="10 digits only"><br>
     <br>
-    <label for="country">COUNTRY </label>
+    <label for="country" >COUNTRY </label>
     <select>
+        <option>select</option>
         <option>australia</option>
         <option>pakistan</option>
         <option>india</option>
         <option>iran</option>
     </select><br>
     <br>
-    <label for="state">STATE </label>
+    <label for="state" >STATE </label>
     <select>
+        <option>select</option>
         <option>karnataka</option>
         <option>kerala</option>
         <option>tamilnadu</option>
@@ -38,5 +53,6 @@
         <br>
         <input type="submit" value="submit">
     </form>
+</div>
     </body>
 </html>
