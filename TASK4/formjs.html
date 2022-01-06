@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+    <link rel="stylesheet" href="task4.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>EMPLOY DETAILS</h1>
+        <form id="form-1">
+            <label for="fullname" >fullname</label>
+            <input type="text" id="fullName" placeholder="enter  your name">
+            <label for="fathername" >fathername</label>
+            <input type="text" id="fatherName" placeholder="enter  your father name">
+            <label for="empid" >empid</label>
+            <input type="text" id="empid" placeholder="enter employ id">
+            <label for="phonenumber">PHONE NO : </label>
+            <input id="phonenumber" type="tel" placeholder="10 digits only">
+
+            <label for="state" >STATE </label>
+            <select id="state"> 
+                <option>select</option>
+                <option>karnataka</option>
+                <option>kerala</option>
+                <option>tamilnadu</option>
+                <option>andrapradesh</option>
+            </select>  
+        
+            <label for="address">ADDRESS : </label>
+            <textarea id="address" name="address"> </textarea> 
+            <pre>
+            <div class="button">
+            <button type="submit" >submit</button>  
+         </div>
+         <input type="reset" value="reset" onclick="">  
+         
+        </pre>
+        </form>
+    </div>
+        <h1>DATA</h1>
+        <table id="tabledata">
+            <tr>
+                <th>fullname</th>
+                <th>fathername</th>
+                <th>empid</th>
+                <th>PHONE NO</th>
+                <th>STATE</th>
+            </tr>
+        </table>
+        <script>
+            var mCon=document.getElementsByClassName("container")[0];
+            var mForm=document.getElementById("form-1");
+            mForm.addEventListener("submit",function(event){
+                event.preventDefault();
+                var fName=document.getElementById("fullName");
+                console.log(fName.value);
+                var faName=document.getElementById("fatherName");
+                console.log(faName.value);
+                var empid=document.getElementById("empid");
+                console.log(empid.value);
+                var state=document.getElementById("state");
+                console.log(state.value);
+                var address=document.getElementById("address");
+                console.log(address .value);
+
+            });
+
+        </script>
+    </body>
+</html>
