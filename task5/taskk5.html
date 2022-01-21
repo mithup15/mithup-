@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <link rel="stylesheet" href="task5.css">
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+          <img src="img7.jpg">
+          <img src="img6.jpg">
+          <img src="img4.jpg">
+          <img src="img1.jpg">
+          <img src="img3.jpg">
+        </div>
+        <div onclick="slidee(-1)" class="slide left">
+            <span> < </span>
+        </div>
+        <div  onclick="slidee(1)" class="slide right">
+            <span> > </span>
+        </div>
+        <div class="round">
+            <span onclick="rounds(1)"> </span>
+            <span  onclick="rounds(2)"> </span>
+            <span  onclick="rounds(3)"> </span>
+            <span  onclick="rounds(4)"> </span>
+            <span  onclick="rounds(5)"> </span>
+        </div>
+    </div>
+
+    <script>
+       var index=1;
+       showImg(index);
+       function rounds(e){
+           showImg(index=e);
+       }
+       function slidee(e){
+           showImg(index +=e);
+       }
+       function showImg(e){
+           var i;
+           var img=document.querySelectorAll('img');
+           var sliders=document.querySelectorAll('.round span');
+           if(e>img.length){index=1}
+            if(e<1){index=img.length}
+            for(i=0;i<img.length;i++){
+                img[i].style.display="none";
+            }
+            img[index-1].style.display="block";
+       }
+
+
+    </script>
+</body>
+</html>
