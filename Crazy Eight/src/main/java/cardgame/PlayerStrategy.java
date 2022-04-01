@@ -87,7 +87,7 @@ public interface PlayerStrategy {
     /**
      * Returns the score of each player
      */
-    int getScore();
+    int getScore(int point);
 
     /**
      * Called before a game begins, to allow for resetting any state between games.

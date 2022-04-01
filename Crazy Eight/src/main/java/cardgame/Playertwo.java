@@ -84,20 +84,18 @@ public class Playertwo implements PlayerStrategy{
 		}
 		System.out.println("Delcare suit : "+declaredSuit.getSuit());
 		return declaredSuit.getSuit();
-		
 	}
 	public void processOpponentActions(List<PlayerTurn> opponentActions) {
 		
 	}
 	 public void reset() {
 		 
-	 }
-	 @Override
-		public int getScore() {
-			int point=0;
+	 }@Override
+		public int getScore(int point) {
 			for(int i=0;i<myCards.size();i++) {
-				point+=myCards.get(i).getPointValue();
+				if(point<200)
+					point+=myCards.get(i).getPointValue();
 			}
 			return point;
-		}
+}
 }

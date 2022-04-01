@@ -43,6 +43,7 @@ public class Playerone implements PlayerStrategy{
 		myCards.add(drawnCard);
 	}
 	public Card playCard() {
+		
 		Card dropCard=null;
 		if(changedSuit==null) {
 			for(int i=0;i<myCards.size();i++) {
@@ -53,16 +54,24 @@ public class Playerone implements PlayerStrategy{
 					break;
 				}
 			}
+			
 		}
 		else {
 			for(int i=0;i<myCards.size();i++) {
-				if(myCards.get(i).getSuit().equals(changedSuit)) {
+				if(myCards.get(i).getSuit() == changedSuit) {
 					System.out.println("Player - 1 played : "+myCards.get(i).getRank()+" "+myCards.get(i).getSuit());
 					dropCard=myCards.get(i);
 					myCards.remove(i);
 					break;
 				}
 			}
+//			if(z==0)
+//			{
+//			while(k!=0)
+//			{
+//				myCards.add(cardDeck.get(cardDeck.size()-1));
+//			}
+//			}
 		}
 		return dropCard;
 		
@@ -92,10 +101,10 @@ public class Playerone implements PlayerStrategy{
 		 
 	 }
 	@Override
-	public int getScore() {
-		int point=0;
+	public int getScore(int point) {
 		for(int i=0;i<myCards.size();i++) {
-			point+=myCards.get(i).getPointValue();
+			if(point<200)
+				point+=myCards.get(i).getPointValue();
 		}
 		return point;
 	}
