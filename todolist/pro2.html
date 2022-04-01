@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>\
+    <style>
+        .container{
+            background-color: chartreuse;
+            margin-left: 30%;
+            margin-right: 30%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center><div class="container">
+        <center><h2> Login Form</h2></center>
+        <div class="main">
+        <form id="form_id" method="post" action="todo.html" onsubmit="return validate()"  name="myform">
+        <label>User Name :</label><br>
+        <input type="text" name="username" id="username"/><br>
+        <label>Password :</label><br>
+        <input type="password" name="password" id="password"/><br><br>
+        <input type="submit"  value="login" id="submit" >
+        </form>
+       
+        </div>
+        </div></center>
+    <script>
+     function validate(){
+         var object=localStorage.getItem('item');
+         var obj=JSON.parse(object);
+         var username=document.getElementById("username").value;
+         var password=document.getElementById("password").value;
+         if(password==obj.password && username==obj.email)
+         {}
+         else
+         {
+             alert("invalid");
+           
+             return false;
+         }
+     }
+    </script>
+    
+</body>
+</html>

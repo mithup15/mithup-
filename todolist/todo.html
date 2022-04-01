@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        .container{
+            margin-top: 10%;
+            margin-left: 30%;
+        }
+        #text{
+            padding: 10px;
+            width: 40%;
+        }
+        #button{
+            padding: 10px;
+        }
+        #todos{
+          
+            margin-left: 30%;
+            padding: 10px;
+        }
+        #clearall{
+            margin-top: 10%;
+            margin-left: 40%;
+            background-color:  rgb(250, 61, 3);
+        }
+        #logout{
+            border: 2px solid rgb(10, 10, 10);
+            padding: 10px;
+            margin-top: 10%;
+            margin-left: 30%;
+            background-color: rgb(193, 22, 236);
+            width: 50px;
+
+        }
+
+    </style>
+</head>
+<body style="background-color: rgb(241, 240, 139);">
+    <div class="container">
+        <input style="background-color: rgb(35, 211, 218);" type="text" id="text" placeholder="TYPE THE TEXT..."><button style="background-color: rgb(93, 228, 15);" id="button" >ADD</button> <a href="pro2si.html" id="logout">logout</a>
+    </div>
+    <div class="to_do" id="todos"></div>
+    <button id="clearall">Clear All</button>
+    <button id="Save" onclick="myfunction()">Save</button>
+    <button style="background-color: rgb(250, 61, 3);" id="clear">clear</button>
+    <button id="show" onclick="myShow()">show</button>
+   <script>
+    let addbutton=document.getElementById('button');
+    let todos=document.getElementById('todos');
+    let text=document.getElementById('text');
+     
+    addbutton.addEventListener('click',function(){
+        var paragraph=document.createElement('p')
+        paragraph.innerText=text.value;
+        todos.appendChild(paragraph);
+        text.value="";
+        paragraph.addEventListener('click',function(){
+            paragraph.style.textDecoration = "line-through";
+        })
+        paragraph.addEventListener('dblclick',function(){
+            paragraph.style.textDecoration = "none";
+        })
+        document.getElementById("clearall").addEventListener('click',function(){
+            todos.innerHTML="";
+        })
+        clear.addEventListener('click',function(){
+            if(paragraph.style.textDecoration=="line-through"){
+        paragraph.innerText="";
+            }
+        })
+     })
+     function myfunction(){
+        var savedata=document.getElementById ('todos');
+        localStorage.setItem('saveData',savedata.innerHTML);
+     }
+     function myShow(){
+         var savedata=localStorage.getItem("saveData");
+         document.getElementById ('todos').innerHTML=savedata;
+     }
+   </script>
+</body>
+</html>
