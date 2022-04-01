@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img id="img" src="" alt="Preview" width="20%" height="20%">
+</body>
+</html>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+const recentimagesDataUrl=localStorage.getItem("presentimages");
+if(recentimagesDataUrl)
+{
+document.querySelector("#img").setAttribute("src",recentimagesDataUrl); 
+console.log(localStorage.getItem("jsons"));
+}
+});
+let newObject = window.localStorage.getItem("object");
+var obj=JSON.parse(newObject); 
+for (var key in obj) { 
+var tag = document.createElement("p");
+tag.setAttribute("class","myP") ;
+  var text = document.createTextNode(key + " : " + obj[key]); 
+  tag.appendChild(text); 
+  var element = document.getElementsByTagName("body")[0];
+  element.appendChild(tag);
+}
+
+</script>
+

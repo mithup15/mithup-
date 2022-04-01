@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>images and json</title>
+<style>
+  .sub{
+    padding: 15px;
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+  .container{
+    margin-left: 20%;
+    margin-top: 20%;
+    margin-right: 20%;
+    background-color: rgb(252, 227, 7);
+  }
+</style>
+</head>
+<body background="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg">
+<form action="pronext.html" target="_blank">
+<div class="container">
+  <div>
+ <center>
+<h3>upload images :</h3> <input type="file" accept="images/*" name="images" id="images" required />
+</div>
+</center>
+<br><br>
+<div>
+<center>
+<h3> upload json: </h3><input type="file" id="filejson" accept=".json" required />
+</div>
+</center>
+<div class="sub">
+<input type="submit">
+</div>
+</div>
+</form>
+<script>
+document.querySelector("#images").addEventListener("change",function(){
+const read=new FileReader();  
+read.addEventListener("load",function(){
+localStorage.setItem("presentimages", read.result);
+console.log(document.getElementById("images").value);
+}); 
+read.readAsDataURL(this.files[0]);
+});
+document.getElementById("filejson").addEventListener("change", function() {
+  var jasonfiletoread = document.getElementById("filejson").files[0];
+  var jasonread = new FileReader();
+  jasonread.onload = function(e) {
+    var content = e.target.result;
+    var data = JSON.parse(content); 
+    window.localStorage.setItem("object", JSON.stringify(data));
+  };
+ jasonread.readAsText(jasonfiletoread);
+});
+</script>
+</body>
+</html>
