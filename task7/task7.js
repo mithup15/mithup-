@@ -8,7 +8,8 @@ function searchFun()
         if (inItems.indexOf(key) > -1)
         {
             myFood[i].style.display = "";
-        } else 
+        } 
+        else 
         {
             myFood[i].style.display = "none";
         }
