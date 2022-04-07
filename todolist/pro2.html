@@ -10,12 +10,13 @@
             margin-left: 30%;
             margin-right: 30%;
             border-radius: 5px;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <center><div class="container">
-        <center><h2> Login Form</h2></center>
+        <div class="container">
+        <h2  style="align-items: center;"> Login Form</h2>
         <div class="main">
         <form id="form_id" method="post" action="todo.html" onsubmit="return validate()"  name="myform">
         <label>User Name :</label><br>
@@ -26,7 +27,7 @@
         </form>
        
         </div>
-        </div></center>
+        </div>
     <script>
      function validate(){
          var object=localStorage.getItem('item');
