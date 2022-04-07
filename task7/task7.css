@@ -42,7 +42,7 @@
     margin: 40px 0 40px 0;
 }
 .food .image{
-    width: 340px;
+    width: 100%;
     margin: 20px;
     border: 15px solid rgb(252, 15, 15);
     text-align: center;
