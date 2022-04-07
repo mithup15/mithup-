@@ -7,10 +7,10 @@ function searchFun()
         var inItems = myFood[i].querySelector("h2").innerText.toUpperCase();
         if (inItems.indexOf(key) > -1)
         {
-            myFood[i].style.display = ""
+            myFood[i].style.display = "";
         } else 
         {
-            myFood[i].style.display = "none"
+            myFood[i].style.display = "none";
         }
     }
 }
