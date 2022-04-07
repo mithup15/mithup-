@@ -1,12 +1,12 @@
 var myTabs = document.querySelectorAll(".tab");
-for (let i = 0; i < myTabs.length; i++) {
-    myTabs[i].addEventListener("click", function() {
-        var cont = myTabs[i].nextElementSibling;
+for (let tab of myTabs) {
+    tab.addEventListener("click", function() {
+        var cont = tab.nextElementSibling;
         if (cont.style.maxHeight) {
             cont.style.maxHeight = null;
         } else {
             cont.style.maxHeight = cont.scrollHeight + "px";
         }
-        myTabs[i].classList.toggle("active");
+        tab.classList.toggle("active");
     });
 }
