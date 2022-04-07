@@ -48,7 +48,6 @@
     text-align: center;
     display: flex;
      position: relative;
-    width: 100%;
     height: 300px;
 }
 .food .image img{
