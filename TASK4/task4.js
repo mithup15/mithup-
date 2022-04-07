@@ -40,21 +40,21 @@ function readFormData() {
 function insertNewRecord(data) {
     var table = document.getElementById("empdetails").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
+    var cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.fullName;
-    cell2 = newRow.insertCell(1);
+    var cell2 = newRow.insertCell(1);
     cell2.innerHTML = data.Phonenumber;
-    cell3 = newRow.insertCell(2);
+    var cell3 = newRow.insertCell(2);
     cell3.innerHTML = data.email;
-    cell4 = newRow.insertCell(3);
+    var cell4 = newRow.insertCell(3);
     cell4.innerHTML = data.salary;
-    cell5 = newRow.insertCell(4);
+    var cell5 = newRow.insertCell(4);
     cell5.innerHTML = data.state;
-    cell6 = newRow.insertCell(5);
+    var cell6 = newRow.insertCell(5);
     cell6.innerHTML = data.city;
-    cell7 = newRow.insertCell(6);
+    var cell7 = newRow.insertCell(6);
     cell7.innerHTML = data.gender;
-    cell8 = newRow.insertCell(7);
+    var cell8 = newRow.insertCell(7);
     cell8.innerHTML = `<a onClick="onEdit(this)">Edit</a>
                        <a onClick="onDelete(this)">Delete</a>`;
     
@@ -94,18 +94,18 @@ function updateRecord(formData) {
 
 function onDelete(td) {
     if (confirm('Are you ready to take risk ?')) {
-        row = td.parentElement.parentElement;
+        var row = td.parentElement.parentElement;
         document.getElementById("empdetails").deleteRow(row.rowIndex);
         resetForm();
     }
 }
 function validate() {
-    isValid = true;
+    var isValid = true;
     if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
     } else {
-        isValid = true;
+       var isValid = true;
         if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
             document.getElementById("fullNameValidationError").classList.add("hide");
     }
