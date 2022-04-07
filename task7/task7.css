@@ -37,7 +37,6 @@
 .food{
     display: flex;
     justify-content: center;
-    flex-direction: row-reverse;
     flex-wrap: wrap; 
     margin: 40px 0 40px 0;
 }
@@ -60,3 +59,8 @@
 }
 
 
+  position: absolute;
+55
+    top: 0;
+56
+    left: 0;
