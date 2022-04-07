@@ -2,7 +2,7 @@ function searchFun()
 {
     var key = document.querySelector("#search").value.toUpperCase();
     var myFood = document.querySelectorAll(".food");
-    for (let myfood of this.myFood) {
+    for (let myfood of myFood) {
         var inItems = myfood.querySelector("h2").innerText.toUpperCase();
         if (inItems.indexOf(key) > -1){
             myfood.style.display = "";
